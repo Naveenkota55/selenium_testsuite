@@ -25,3 +25,23 @@ click_opt.click()
 time.sleep(2)
 driver.quit()
 '''
+#automation of web
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+driver=webdriver.Firefox(executable_path='/usr/local/bin/geckodriver')
+
+driver.maximize_window()
+driver.get('https://www.saucedemo.com')
+driver.find_element_by_id('user-name').send_keys('standard_user')
+driver.find_element_by_id('password').send_keys('secret_sauce')
+driver.find_element_by_class_name('btn_action').click()
+driver.find_element_by_xpath('//*[@id="inventory_container"]/div/div[1]/div[3]/button').click()
+driver.find_element_by_css_selector('.svg-inline--fa > path:nth-child(1)').click()
+'''driver.find_element_by_class_name('/html/body/div/div[2]/div[1]/div[2]/a/svg/path').click()'''
+'''check weather item is added in cart
+if check_item==True:
+    driver.find_element_by_xpath('//*[@id="cart_contents_container"]/div/div[2]/a[2]').click()
+'''
+time.sleep(3)
+driver.quit()
