@@ -36,4 +36,19 @@ import time
 #automation through firefox
 driver=webdriver.Firefox(executable_path='/usr/local/bin/geakodriver')
 #get website in this case amazon
+driver.get("https://www.amazon.ca")
+#selection of electronic store just to load other page
+driver.find_element(By.XPATH,"//*[@id='nav-xshop']/a[8]")
+#selection of wearable electonics
+#implimenting explict wait with expected conditions
+
+wait=WebDriverWait(driver,10)
+element=wait.until(EC.element_to_be_clickable((By.XPATH,"//*[@id='leftNav']/ul[1]/ul/div/li[15]/span/a/span")))
+element.click()
+
+#explicit wait by time module
+time.sleep(5)
+#closing browser
+driver.close()
+
 
