@@ -9,7 +9,7 @@ import time
 driver=webdriver.Firefox(executable_path="/usr/local/bin/geckodriver")
 driver.maximize_window()
 driver.get("http://demo.guru99.com/test/login.html")
-
+print(driver.find_element_by_class_name("is_required validate account_input form-control").is_displayed())
 input_boxes=driver.find_elements(By.CLASS_NAME,"is_required validate account_input form-control")
 print (len(input_boxes))
 
