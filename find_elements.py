@@ -12,4 +12,5 @@ driver.get("https://fs2.formsite.com/meherpavan/form2/index.html?1537702596407")
 #using class as commomn attribute
 input_boxes=driver.find_elements(By.CLASS_NAME,"text_field")
 print(len(input_boxes))  #to find number of input boxes
+print(driver.find_element(By.XPATH,"//*[@id='q26']/table/tbody/tr[1]/td/label").is_enabled())
 driver.quit()
