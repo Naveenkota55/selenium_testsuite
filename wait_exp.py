@@ -25,7 +25,7 @@ driver.find_element(By.XPATH,'/html/body/meso-native-marquee/section/div/div/div
 
 #explict wait line
 wait=WebDriverWait(driver,10)
-wait.until(EC.element_to_be_clickable.By.XPATH("//*[@id='tab-flight-tab-hp']"))
+wait.until(EC.element_to_be_clickable.By.XPATH("//*[@id='tab-flight-tab-hp']")).click()
 
 
 time.sleep(3)
