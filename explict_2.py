@@ -27,6 +27,9 @@ element.click()
 time.sleep(2)
 driver.quit()'''
 
+
+#second test example on amazon
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -39,6 +42,7 @@ driver=webdriver.Firefox(executable_path='/usr/local/bin/geckodriver')
 #get website in this case amazon
 driver.get("https://www.amazon.ca")
 #selection of electronic store just to load other page
+#css selector/ xpath both seems to change evertime loading amazon webpage,it is expected behaviour that may not work everytime
 driver.find_element(By.CSS_SELECTOR,"#nav-xshop > a:nth-child(4)")
 #selection of wearable electonics
 #implimenting explict wait with expected conditions
