@@ -1,5 +1,6 @@
 #explicit wait 2 practice
 #working test_1
+#second test msy not work everytime cause amazon seems to update the webpage every time with new suggestion but first will work cause i am using search bar id
 '''
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -26,19 +27,19 @@ element.click()
 time.sleep(2)
 driver.quit()'''
 
-from selemnium import webdriver
+from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.common.support import expected_conditions as EC
-from selenium.common.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 import time
 
 #automation through firefox
-driver=webdriver.Firefox(executable_path='/usr/local/bin/geakodriver')
+driver=webdriver.Firefox(executable_path='/usr/local/bin/geckodriver')
 #get website in this case amazon
 driver.get("https://www.amazon.ca")
 #selection of electronic store just to load other page
-driver.find_element(By.XPATH,"//*[@id='nav-xshop']/a[8]")
+driver.find_element(By.CSS_SELECTOR,"#nav-xshop > a:nth-child(4)")
 #selection of wearable electonics
 #implimenting explict wait with expected conditions
 
