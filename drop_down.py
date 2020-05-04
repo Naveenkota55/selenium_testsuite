@@ -14,5 +14,7 @@ drp=Select(element)
 #drp.select_by_index(1)
 
 drp.select_by_value("Radio-1")
+
+print(len(drp.options))
 time.sleep(2)
 driver.quit()
