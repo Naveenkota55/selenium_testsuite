@@ -12,5 +12,11 @@ all_links=driver.find_elements(By.TAG_NAME,"a")
 print(len(all_links))
 
 #to print links in text
-for links in all_links:
-    print (links.text)
+'''for links in all_links:
+    print (links.text)'''
+
+#to click links by full name
+driver.find_element(By.LINK_TEXT,"Selenium").click()
+
+time.sleep(2)
+driver.quit()
