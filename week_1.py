@@ -41,6 +41,8 @@ driver.find_element(By.ID,"RESULT_TextField-6").send_keys("@dal.ca")
 if status==False & status_1==False:                                 #to change only certain conditions meet
     driver.find_element(By.ID,"RESULT_CheckBox-8_1").click()
     driver.find_element(By.ID,"RESULT_RadioButton-7_0").click()
+else :
+    pass
 
 for option in drp_options:                                  #to view options in drop down in text
     print(option.text)
