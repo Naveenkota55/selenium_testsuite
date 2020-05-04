@@ -18,13 +18,15 @@ print("totel links present in webpage:",len(total_links))
 
 element_1=driver.find_elements(By.ID,"RESULT_RadioButton-9")
 element=driver.find_element(By.ID,"RESULT_RadioButton-9")
+drp=Select(element)
+drp_options=drp.options
 print ("totel number of dropdowns:",len(element_1))
+print("options available in dropdown::",len(drp_options))
 
 status=driver.find_element(By.ID,"RESULT_RadioButton-7_0").is_selected()
 status_1=driver.find_element(By.ID,"RESULT_CheckBox-8_1").is_selected()
 
-drp=Select(element)
-drp_options=drp.options
+
 driver.find_element(By.ID,"RESULT_TextField-1").send_keys("Naveen")
 driver.find_element(By.ID,"RESULT_TextField-2").send_keys("kota")
 driver.find_element(By.ID,"RESULT_TextField-3").send_keys("9012222222")
@@ -38,5 +40,8 @@ if status==False & status_1==False:
 '''
 for option in drp_options:
     print(option.text)
+
+drp.select_by_visible_text("Morning")
+driver.find_element(By.PARTIAL_LINK_TEXT,"Software")
 time.sleep(3)
 driver.quit()
