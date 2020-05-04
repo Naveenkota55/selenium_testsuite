@@ -16,26 +16,27 @@ print("total_text_fields_in_webpages=",len(total_txt_field))
 total_links=driver.find_elements(By.TAG_NAME,"a")
 print("totel links present in webpage:",len(total_links))
 
-element=driver.find_elements(By.CLASS_NAME,"drop_down")
-print ("totel number of dropdowns:",len(element))
+element_1=driver.find_elements(By.ID,"RESULT_RadioButton-9")
+element=driver.find_element(By.ID,"RESULT_RadioButton-9")
+print ("totel number of dropdowns:",len(element_1))
 
 status=driver.find_element(By.ID,"RESULT_RadioButton-7_0").is_selected()
 status_1=driver.find_element(By.ID,"RESULT_CheckBox-8_1").is_selected()
+
 drp=Select(element)
-
-print(drp.options)
-
+drp_options=drp.options
 driver.find_element(By.ID,"RESULT_TextField-1").send_keys("Naveen")
 driver.find_element(By.ID,"RESULT_TextField-2").send_keys("kota")
 driver.find_element(By.ID,"RESULT_TextField-3").send_keys("9012222222")
 driver.find_element(By.ID,"RESULT_TextField-4").send_keys("Canada")
 driver.find_element(By.ID,"RESULT_TextField-5").send_keys("Halifax")
 driver.find_element(By.ID,"RESULT_TextField-6").send_keys("@dal.ca")
-
+'''
 if status==False & status_1==False:
     driver.find_element(By.ID,"RESULT_CheckBox-8_1").click()
     driver.find_element(By.ID,"RESULT_RadioButton-7_0").click()
-
-
+'''
+for option in drp_options:
+    print(option.text)
 time.sleep(3)
 driver.quit()
