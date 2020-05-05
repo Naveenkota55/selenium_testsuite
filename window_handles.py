@@ -1,3 +1,4 @@
+#this script contains the window handles, switching between them and also closing
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -11,16 +12,16 @@ driver.find_element_by_xpath("//*[@id='Wikipedia1_wikipedia-search-form']/div/sp
 handles=driver.window_handles
 print(handles)
 
-'''driver.switch_to.window(handles[1])
+'''driver.switch_to.window(handles[1])  #switching the window
 print(driver.current_window_handle)
 print(driver.title)'''
 
-for handle in handles:
+for handle in handles:                  #to get all the windows handles , title,and also switching
     driver.switch_to.window(handle)
     print (handle)
     print(driver.title)
     if driver.title=='Automation Testing Practice':
-        driver.close()
+        driver.close()      #closing specific window
 
 
 time.sleep(3)
