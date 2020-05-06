@@ -23,11 +23,17 @@ users=driver.find_element(By.XPATH,"//*[@id='menu_admin_viewSystemUsers']")
 actions=ActionChains(driver)
 actions.move_to_element(admin).move_to_element(user_mag).move_to_element(users).click().perform()#performing action chains *will not work unless there is perform() at the end
 '''
-driver.get("http://testautomationpractice.blogspot.com")
+
+#following code consists to double click
+'''driver.get("http://testautomationpractice.blogspot.com")
 element=driver.find_element(By.XPATH,"//*[@id='HTML10']/div[1]/button")
 action=ActionChains(driver)
-action.double_click(element).perform()
+action.double_click(element).perform()'''
 
-
+#following script is for double click()
+driver.get("http://demo.guru99.com/test/simple_context_menu.html")
+element=driver.find_element(By.XPATH,"//*[@id='authentication']/span")
+actions=ActionChains(driver)
+actions.context_click(element).perform()
 time.sleep(5)
 driver.quit()
