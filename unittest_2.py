@@ -24,19 +24,22 @@ class searchengine(unittest.TestCase):
     @classmethod
     def setUpClass(hi):
         print("start of class")
-    
+
+    @unittest.SkipTest
     def test_google(self):
         self.driver=webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
         self.driver.get("http://google.com")
         print(self.driver.title)
         self.driver.close()
-        
+
+    @unittest.skip("skipped cause test case is not completed")
     def test_bing(self):
         self.driver=webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
         self.driver.get("https://bing.com")
         print(self.driver.title)
         self.driver.close()
 
+    @unittest.skipIf(1==2,"wiki skipped")
     def test_wiki(self):
         self.driver=webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
         self.driver.get("http://wikipedia.com")
