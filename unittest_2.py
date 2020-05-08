@@ -4,6 +4,9 @@ import time
 
 
 class searchengine(unittest.TestCase):
+    def setUp(self):
+        print("this is setup")
+        
     def test_google(self):
         self.driver=webdriver.Chrome(executable_path="/usr/local/bin/chromedriver")
         self.driver.get("http://google.com")
