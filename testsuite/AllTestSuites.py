@@ -10,4 +10,18 @@ tc3=unittest.TestLoader().loadTestsFromTestCase(PaymentReturn)
 tc4=unittest.TestLoader().loadTestsFromTestCase(Payment)
 
 sanity_test=unittest.TestSuite([tc2,tc1])
-unittest.TextTestRunner().run(sanity_test)
+funitional_test=unittest.TestSuite([tc3,tc4])
+master_test=unittest.TestSuite([tc1,tc2,tc3,tc4])
+
+option=int(input("enter a OPTION  1. Sanity    2. funtional  3. Master      :"))
+if option==1:
+    print("Sanity_test selected")
+    unittest.TextTestRunner().run(sanity_test)
+elif option==2:
+    print("functional test selected")
+    unittest.TextTestRunner().run(funitional_test)
+elif option==3:
+    print("master test selected")
+    unittest.TextTestRunner(verbosity=2).run(master_test) 
+else:
+    print("invaild option")
